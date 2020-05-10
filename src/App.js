@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import CovidLatestStat from './CovidLatestStat'
 
+
+
 class App extends Component 
 {
     
@@ -58,12 +60,14 @@ render()
     return(
     
         <div>
-            <h1>Hello !!</h1>
+            <h1 style ={{textAlign:'center'}}>Surakshit</h1>
             <p>This page is basically based on the readily available data which is open-sourced</p>
             <p>Always looking foward for suggestions.</p>
             {bio}
             <hr></hr>
-            <CovidLatestStat/>
+          <CovidLatestStat/>
+          <hr></hr>
+           
         </div>
         
 
