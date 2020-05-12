@@ -6,7 +6,7 @@ import Statewisedata from './Statewisedata'
 class CovidLatestStat extends Component
 {
     state ={zonaldata:[],cases_time_series:[],statewise:[],tested:[],totaltodayConfirmed:'',
-    totaltodayRecovered:'',tc:'',tr:''}
+    totaltodayRecovered:'',tc:'',tr:'',dc:'',dr:''}
     
     componentDidMount()
     {
@@ -37,9 +37,17 @@ class CovidLatestStat extends Component
                        }
                   
             )
-      this.setState( {tc:this.state.cases_time_series.map(x=>x.totalconfirmed)})
-      this.setState( {tr:this.state.cases_time_series.map(x=>x.totalrecovered)})
+      this.setState( {dc:this.state.cases_time_series.map(x=>x.dailyconfirmed)})
+      this.setState( {dr:this.state.cases_time_series.map(x=>x.dailyrecovered)})
       this.setState( {date:this.state.cases_time_series.map(x=>x.date)})
+
+     //this.setState( {dc:this.state.cases_time_series.map(x=>x.dailyconfirmed)})
+      //this.setState( {dr:this.state.cases_time_series.map(x=>x.dailyrecovered)})
+
+      //console.log('check dc',this.state.dc)
+      //console.log('check tc',this.state.tc)
+     // this.setState({tr:this.state.dr})
+     // this.setState({tc:this.state.dc})
         
         
           
@@ -52,9 +60,10 @@ class CovidLatestStat extends Component
        // this.testfunc()
        //console.log('length',(this.state.statewise).length)
        let lin,lin2,state1
-       let x=[this.state.tr,this.state.date,'Indian Recovery','Level of reovery(INDIA)']
+       let x=[this.state.dr,this.state.date,'Indian Recovery','Level of reovery(INDIA)']
        if(x[0]!==undefined && x[1]!==undefined && x[2]!==undefined && x[3]!==undefined)
        {
+           console.log('111111111111111111111111222222222222222222',x[0])
         lin=(
             <div>
                 <GraphProjection recover={x}/>
@@ -73,7 +82,7 @@ class CovidLatestStat extends Component
        }
 
 
-        x=[this.state.tc,this.state.date,'Indian Cases','Overall Cases(India)']
+        x=[this.state.dc,this.state.date,'Indian Cases','Confirmed Case(India)']
        if(x[0]!==undefined && x[1]!==undefined && x[2]!==undefined && x[3]!==undefined)
        {
         lin2=(
@@ -116,7 +125,7 @@ class CovidLatestStat extends Component
                 Total Recovered :{this.state.totaltodayRecovered}
 
 
-                <table border = "0" style={{height:'1000px',width:'1000px'}}>
+                <table border = "0" style={{height:'260px',width:'1000px'}}>
                 <tr>
                     <td><div>{lin}</div></td>
                     <td><div></div>{lin2}</td>

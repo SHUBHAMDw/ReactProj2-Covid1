@@ -12,6 +12,7 @@ import { Line } from "react-chartjs-2";
   //console.log('typ1 ', (temp));
  let jj=['323','3223']
   console.log('sahgd gdygjhgdsajsa  ',date[0])
+  console.log('sahgd gdygjhgdsajsa  22',val1)
 
  
   const chart = () => {
@@ -32,7 +33,7 @@ import { Line } from "react-chartjs-2";
   return (
     <div className="App">
       <h1>{props.recover[2]}</h1>
-      <div style={{height:"1000px" ,width:"1200px"}}>
+      <div style={{height:"700px" ,width:"1200px"}}>
        <Line data={chartData} options={ {responsive :true}}/>
        
       </div>
