@@ -3,15 +3,18 @@ import { Line } from "react-chartjs-2";
 //import CovidLatestStat from './CovidLatestStat';
 //import axios from "axios";
 
- let GraphProjection = props => {
+ let StateGraphProj = props => {
   let [chartData, setChartData] = useState({});
-  
-  let val1=props.recover[0]
-  let date=props.recover[1]
+  console.log('sdsdsd',props.strecover);
+  let val1=props.strecover[0]
+  let date=props.strecover[1]
 //  let temp=length(date)
   //console.log('typ1 ', (temp));
  let jj=['323','3223']
-
+  console.log('sahgd gdygjhgdsajsa date  ',date)
+  console.log('sahgd gdygjhgdsajsa  val1 22',val1)
+  console.log('sahgd gdygjhgdsajsa  strecover 23',props.strecover[3])
+  console.log('sahgd gdygjhgdsajsa strecover  24',props.strecover[2])
 
  
   let chart = () => {
@@ -19,7 +22,7 @@ import { Line } from "react-chartjs-2";
           labels: date,
           datasets: [
             {
-              label: props.recover[3],
+              label: props.strecover[3],
               data: val1,
               backgroundColor: ["rgba(75, 192, 192, 0.6)"],
               borderWidth: 4
@@ -31,13 +34,17 @@ import { Line } from "react-chartjs-2";
   }, []);
   return (
     <div className="App">
-      <h1>{props.recover[2]}</h1>
-      <div style={{height:"700px" ,width:"1200px"}}>
+      <h1>{props.strecover[2]}</h1>
+      <div style={{height:"700px" ,width:"800px"}}>
        <Line data={chartData} options={ {responsive :true}}/>
-       
+       {console.log("refreshed hogaya",val1)
+             
+       }
+       {console.log('chart ki value ai ====>>',chartData)}
+       {console.log("hogaya",date)}
       </div>
     </div>
   )
 }
 
-export default GraphProjection;
+export default StateGraphProj;

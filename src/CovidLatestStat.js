@@ -63,7 +63,7 @@ class CovidLatestStat extends Component
        let x=[this.state.dr,this.state.date,'Indian Recovery','Level of reovery(INDIA)']
        if(x[0]!==undefined && x[1]!==undefined && x[2]!==undefined && x[3]!==undefined)
        {
-           console.log('111111111111111111111111222222222222222222',x[0])
+       
         lin=(
             <div>
                 <GraphProjection recover={x}/>
@@ -129,6 +129,7 @@ class CovidLatestStat extends Component
                 <tr>
                     <td><div>{lin}</div></td>
                     <td><div></div>{lin2}</td>
+                   
                 </tr>
 
                 
