@@ -32,7 +32,7 @@ import { Line } from "react-chartjs-2";
   return (
     <div className="App">
       <h1>{props.recover[2]}</h1>
-      <div style={{height:"700px" ,width:"1200px"}}>
+      <div style={{height:"700px" ,width:"1000px"}}>
        <Line data={chartData} options={ {responsive :true}}/>
        
       </div>

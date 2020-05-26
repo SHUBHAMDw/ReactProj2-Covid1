@@ -121,15 +121,16 @@ class CovidLatestStat extends Component
             
 
             <div>
-                Total Confirmed :{ this.state.totaltodayConfirmed } &nbsp;    
-                Total Recovered :{this.state.totaltodayRecovered}
+                <h4> Total Confirmed : <span style ={{color:'Red'}}>{ this.state.totaltodayConfirmed }</span>  &nbsp;    
+                Total Recovered : <span style ={{color:'Green'}}>{this.state.totaltodayRecovered}</span></h4>
 
 
                 <table border = "0" style={{height:'260px',width:'1000px'}}>
                 <tr>
-                    <td><div>{lin}</div></td>
-                    <td><div></div>{lin2}</td>
-                   
+                    <div>{lin}</div>
+                
+                    <div>{lin2}</div>
+
                 </tr>
 
                 
